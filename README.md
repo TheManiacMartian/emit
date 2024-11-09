@@ -2,6 +2,13 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
 
+## OpenAI API Connection
+EMIT requires an OpenAI API key to communicate with ChatGPT.
+
+In order to set the project's API key, find `environment.ts` at location `./src/environments/`. Duplicate the file and name it `environment.development.ts`, it **must** be named correctly for the program to find it.
+
+After that simply set the variable `OPENAI_API_KEY` in `environment.development.ts` to your key. 
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
