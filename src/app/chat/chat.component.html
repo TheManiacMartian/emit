@@ -1,0 +1,56 @@
+
+
+<!-- Chat -->
+<div class="chat-log">
+    <ul *ngIf="ChatLog">
+        <li *ngFor="let message of ChatLog">
+            <!-- For each chat log message, do the following -->
+            <div *ngIf="message.user == 'client'">
+                <div class="client-message">
+                    <p>{{message.content}}</p>
+                </div>
+            </div>
+            <div *ngIf="message.user == 'agent'">
+                <div class="agent-message">
+                    <p>{{message.content}}</p>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+
+<!-- Message field -->
+<div class="message-field-container">
+    <div class="message-field">
+        <textarea [(ngModel)]="message" (keydown.enter)="onMessageFieldSubmit($event)" matInput cdkTextareaAutosize cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5" placeholder="Enter message here..."></textarea>
+        <button mat-fab class="submit-button"(click)="onMessageFieldSubmit($event)">
+            <mat-icon>send</mat-icon>
+        </button>
+    </div>
+</div>
+
+<!-- Selectors -->
+<div class="selectors">
+    <mat-form-field>
+        <mat-label>Dataset</mat-label>
+        <mat-select>
+            <!-- options -->
+            <mat-option value="Dataset 1">Dataset 1</mat-option>
+            <mat-option value="Dataset 2">Dataset 2</mat-option>
+            <mat-option value="Dataset 3">Dataset 3</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Persona</mat-label>
+        <mat-select>
+            <!-- options -->
+            <mat-option value="Persona 1">Persona 1</mat-option>
+            <mat-option value="Persona 2">Persona 2</mat-option>
+            <mat-option value="Persona 3">Persona 3</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+
+

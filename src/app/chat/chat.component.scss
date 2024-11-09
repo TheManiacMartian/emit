@@ -1,0 +1,107 @@
+.selectors{
+    position: absolute;
+    left:0;
+    right:0;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    background-color: #1c1c1c;
+    z-index: 10;
+}
+
+.message-field{
+    
+    position:absolute;
+
+    width: 80%;
+    left:10%;
+    bottom: 2%;
+    background-color: #1c1c1c;
+
+    overflow: hidden;
+    padding: 15px;
+
+    border-radius: 50px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    textarea{
+        width: 90%;
+        font-size: large;
+        color: white;
+        background-color:transparent;
+        border: none;
+        outline: none;
+        border-radius: 20px;
+        
+        height: 1rem;
+        line-height: 1rem;
+       
+    }
+
+    button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        background-color:#38A8CD;
+        color:white;
+        outline: none;
+        border: none;
+        border-radius: 50%;
+        
+    }
+}
+
+.chat-log{
+    position: absolute;
+    width: 95%;
+    height: 80%;
+    bottom: 12%;
+    overflow-y:scroll;
+    display: flex;
+    flex-direction: column-reverse;
+
+    ul{
+        list-style-type: none;
+    }
+
+    // hide scrollbar for Chrome, Safari and Opera
+    ::-webkit-scrollbar{
+        display: none;
+    }
+
+    // hide scrollbar for IE, Edge and Firefox
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.client-message{
+    display: flex;
+    justify-content: right;
+
+    p{
+        width: fit-content;
+        background-color: #1c1c1c;
+        padding: 15px;
+        border-radius: 15px;
+    }
+
+}
+
+.agent-message{
+    display: flex;
+    justify-content: left;
+
+    p{
+        width: fit-content;
+        background-color: #38A8CD;
+        padding: 15px;
+        border-radius: 15px;
+    }
+
+}

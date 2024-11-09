@@ -1,0 +1,36 @@
+.parent-container{
+    margin: auto;
+    text-align: center;
+}
+
+.button-container{
+    margin: 20px auto;
+    display:flex;
+    flex-direction: column;
+    
+    button{
+        margin: 0;
+        padding: 25px;
+        text-align: left;
+        justify-content: left;
+    }
+}
+
+.additional-buttons{
+    margin: 40px auto;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display:flex;
+    flex-direction: column;
+    
+    button{
+        margin: 0;
+        padding: 25px;
+        text-align: left;
+        justify-content: left;
+        color: lightgray;
+
+    }
+}

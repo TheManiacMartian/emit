@@ -1,0 +1,82 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+
+$md-emit: (
+    50 : #e8f7fc,
+    100 : #c6ebf7,
+    200 : #a0def2,
+    300 : #7ad0ed,
+    400 : #5ec6e9,
+    500 : #41bce5,
+    600 : #3bb6e2,
+    700 : #32adde,
+    800 : #2aa5da,
+    900 : #1c97d3,
+    A100 : #ffffff,
+    A200 : #d5f0ff,
+    A400 : #a2deff,
+    A700 : #89d5ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$emit-mockup-primary: mat.define-palette($md-emit);
+$emit-mockup-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$emit-mockup-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$emit-mockup-theme: mat.define-dark-theme((
+  color: (
+    primary: $emit-mockup-primary,
+    accent: $emit-mockup-accent,
+    warn: $emit-mockup-warn,
+  ),
+  typography: mat.define-typography-config(),
+  density: 0
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($emit-mockup-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+html,body
+{
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden; 
+}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
